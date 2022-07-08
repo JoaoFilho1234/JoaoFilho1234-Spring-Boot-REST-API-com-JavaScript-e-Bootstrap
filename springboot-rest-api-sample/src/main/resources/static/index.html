@@ -43,8 +43,8 @@ html {
 	</form>
 
 	<button type="button" class="btn btn-primary" onclick="salvarUsuario()">Salvar</button>
-	<button type="button" class="btn btn-secondary"
-		onclick="document.getElementById('formCadastroUser').reset();">novo</button>
+	<button type="button" class="btn btn-success"
+		onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
 	<button type="button" class="btn btn-danger" data-bs-toggle="modal"
 		data-bs-target="#modalPesquisarUser">Pesquisar</button>
 	<button type="button" class="btn btn-warning"
@@ -78,6 +78,7 @@ html {
 							<tr>
 								<th scope="col">ID</th>
 								<th scope="col">Nome</th>
+								<th scope="col">Idade</th>
 								<th scope="col">Editar</th>
 								<th scope="col">Delete</th>
 
@@ -157,7 +158,7 @@ html {
 					$('#tabelaresultados > tbody > tr').remove();
 					
 					for (var i = 0; i < response.length; i++) {
-						$('#tabelaresultados > tbody').append('<tr id= "'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response[i].nome+'</td><td><button type="button" onclick = "colocarEmEdicao('+response[i].id+')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick="deleteUser('+response[i].id+')">Delete</button></td></tr>');
+						$('#tabelaresultados > tbody').append('<tr id= "'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response[i].nome+'</td><td>'+response[i].idade+'</td><td><button type="button" onclick = "colocarEmEdicao('+response[i].id+')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick="deleteUser('+response[i].id+')">Delete</button></td></tr>');
 					}
 				
 				}
